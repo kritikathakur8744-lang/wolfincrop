@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFINCROP LLC | Premier USA LLC Formation, ITIN, Gateways & Accounting</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: {
+                            DEFAULT: '#1C0E0A',
+                            dark: '#120704',
+                            light: '#2B1711',
+                            medium: '#3D221A',
+                            soft: '#5C382C'
+                        },
+                        copper: {
+                            DEFAULT: '#D49A5A',
+                            dark: '#A66E32',
+                            light: '#E2B888',
+                            glow: 'rgba(212, 154, 90, 0.25)'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F5E6AD'
+                        },
+                        cream: {
+                            DEFAULT: '#FDFBF7',
+                            pure: '#FFFFFF',
+                            soft: '#F5EFE6',
+                            muted: '#E6DBCF',
+                            darker: '#D6C7B7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #1C0E0A;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel-light {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(230, 219, 207, 0.8);
+        }
+
+        .header-scrolled {
+            padding-top: 0.25rem !important;
+            padding-bottom: 0.25rem !important;
+            box-shadow: 0 10px 30px -10px rgba(28, 14, 10, 0.12);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        
+        .glass-panel-dark {
+            background: rgba(28, 14, 10, 0.96);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212, 154, 90, 0.35);
+        }
+
+        .glass-card {
+            background: #FFFFFF;
+            border: 1px solid #E6DBCF;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            border-color: #D49A5A;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(28, 14, 10, 0.1);
+        }
+
+        .text-gradient-copper {
+            background: linear-gradient(135deg, #B57A3D 0%, #E2B888 50%, #8C531E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Carousel Slide Animation */
+        .hero-slide {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0.97);
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            pointer-events: auto;
+            position: relative;
+        }
+
+        /* Mega-menu animation */
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px) scale(0.98);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .nav-item-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        /* Dynamic active link state */
+        .nav-link.active-nav {
+            color: #A66E32;
+            font-weight: 800;
+        }
+        .nav-link.active-nav::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: #D49A5A;
+            border-radius: 999px;
+            margin-top: 2px;
+        }
+
+        /* Mobile Off-Canvas Drawer Animation */
+        .mobile-drawer {
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-drawer.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-copper selection:text-white">
+
+    <!-- SEARCH OVERLAY MODAL -->
+    <div id="search-modal" class="fixed inset-0 z-50 bg-espresso-dark/80 backdrop-blur-md hidden flex items-start justify-center pt-20 px-4">
+        <div class="glass-panel-dark max-w-2xl w-full p-6 rounded-3xl border border-copper/40 text-cream shadow-2xl relative">
+            <div class="flex items-center gap-3 border-b border-espresso-soft pb-4">
+                <i class="fa-solid fa-magnifying-glass text-copper text-lg"></i>
+                <input id="search-input" type="text" placeholder="Search services (e.g., Stripe, Wyoming LLC, ITIN, Tax, PayPal)..." class="w-full bg-transparent text-white text-sm focus:outline-none placeholder:text-cream-muted">
+                <button onclick="toggleSearchModal(false)" class="text-cream-muted hover:text-white text-sm bg-espresso-soft/50 px-2.5 py-1 rounded-lg">ESC</button>
+            </div>
+            
+            <div id="search-results" class="mt-4 max-h-80 overflow-y-auto space-y-2 text-xs">
+                <div class="p-3 rounded-xl bg-espresso-dark hover:bg-espresso-medium cursor-pointer transition flex items-center justify-between" onclick="navigateToSection('packages')">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-bolt text-copper"></i>
+                        <div>
+                            <div class="font-bold text-white">USA LLC Incorporation (24 Hours)</div>
+                            <div class="text-cream-muted text-[11px]">Wyoming, Delaware, Florida, New Mexico • Charges $150+</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-copper"></i>
+                </div>
+
+                <div class="p-3 rounded-xl bg-espresso-dark hover:bg-espresso-medium cursor-pointer transition flex items-center justify-between" onclick="navigateToSection('packages')">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-id-card text-copper"></i>
+                        <div>
+                            <div class="font-bold text-white">IRS ITIN Application (2 Months)</div>
+                            <div class="text-cream-muted text-[11px]">Certified CAA Processing • Flat $250</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-copper"></i>
+                </div>
+
+                <div class="p-3 rounded-xl bg-espresso-dark hover:bg-espresso-medium cursor-pointer transition flex items-center justify-between" onclick="navigateToSection('gateways')">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-brands fa-stripe text-copper text-lg"></i>
+                        <div>
+                            <div class="font-bold text-white">Stripe & Merchant Payment Gateways</div>
+                            <div class="text-cream-muted text-[11px]">Stripe, Wise, Authorize.Net, Payoneer & PayPal</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-copper"></i>
+                </div>
+                
+                <div class="p-3 rounded-xl bg-espresso-dark hover:bg-espresso-medium cursor-pointer transition flex items-center justify-between" onclick="navigateToSection('services')">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-calculator text-copper"></i>
+                        <div>
+                            <div class="font-bold text-white">Accounts, Tax Compliance & Digital Marketing</div>
+                            <div class="text-cream-muted text-[11px]">IRS Form 5472, Bookkeeping, PPC Ads & SEO</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-copper"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MULTI-TIER NAVIGATION HEADER -->
+    <header id="main-header" class="sticky top-0 z-40 glass-panel-light border-b border-cream-muted transition-all duration-300">
+        
+        <!-- TIER 1: TOP QUICK CONTACT & STATUS ANNOUNCEMENT BAR -->
+        <div class="bg-espresso text-cream text-[11px] py-1.5 px-4 border-b border-copper/20">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-3 sm:gap-5 flex-wrap justify-center sm:justify-start">
+                    <span class="flex items-center gap-1.5 text-copper-light font-bold">
+                        <i class="fa-solid fa-bolt text-gold"></i> LLC INC in 24 Hrs ($150+)
+                    </span>
+                    <span class="hidden sm:inline text-cream-muted/40">•</span>
+                    <span class="text-cream-muted flex items-center gap-1.5">
+                        <i class="fa-solid fa-clock text-copper"></i> ITIN Registration in 2 Months ($250+)
+                    </span>
+                    <span class="hidden md:inline text-cream-muted/40">•</span>
+                    <span class="hidden md:flex items-center gap-1.5 text-emerald-400 font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> 24/7 Support Online
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-4 sm:gap-6 font-semibold">
+                    <a href="tel:+917505697279" class="hover:text-copper-light transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-copper text-[10px]"></i> +917505697279
+                    </a>
+                    <a href="https://wa.me/18009653462" target="_blank" class="hover:text-copper-light transition flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp
+                    </a>
+                    <a href="mailto:info@wolfincorp.com" class="hidden lg:flex items-center gap-1.5 hover:text-copper-light transition">
+                        <i class="fa-solid fa-envelope text-copper text-[10px]"></i> info@wolfincorp.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIER 2: MAIN BRANDING & DESKTOP NAVIGATION BAR -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 transition-all" id="main-nav-container">
+            
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group flex-shrink-0">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-espresso-dark to-espresso-light flex items-center justify-center text-copper-light shadow-lg border border-copper/40 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-wolf-pack-battalion text-2xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-2xl font-black tracking-wider text-espresso leading-none">WOLFIN<span class="text-copper-dark">CROP</span></span>
+                        <span class="bg-copper/15 text-copper-dark font-black text-[9px] px-1.5 py-0.5 rounded uppercase">LLC</span>
+                    </div>
+                    <span class="text-[9px] text-espresso-soft tracking-widest uppercase font-bold mt-1">USA Corporate & Merchant Services</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Items with Interactive Dropdown Mega-Menus -->
+            <nav class="hidden xl:flex items-center gap-6 font-bold text-xs uppercase tracking-wider text-espresso-soft">
+                
+                <a href="#home" class="nav-link active-nav hover:text-copper-dark transition-colors py-2">Home</a>
+
+                <!-- MEGA MENU 1: SERVICES & FORMATION HUB -->
+                <div class="relative nav-item-dropdown py-6">
+                    <a href="#packages" class="nav-link hover:text-copper-dark transition-colors flex items-center gap-1.5">
+                        <span>Services & Formation</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-copper transition-transform"></i>
+                    </a>
+                    
+                    <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-[780px] bg-cream-pure p-6 rounded-2xl border border-cream-muted shadow-2xl grid grid-cols-12 gap-6 text-normal font-normal">
+                        <!-- Column 1: LLC Formation -->
+                        <div class="col-span-6 p-4 rounded-xl bg-cream-soft border border-cream-muted hover:border-copper transition space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-espresso text-copper flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-espresso text-sm">USA LLC Incorporation</h4>
+                                    <span class="text-[10px] text-copper-dark font-extrabold uppercase">Turnaround in 24 Hours ($150+)</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-espresso-soft leading-relaxed">Full legal setup in Wyoming, Delaware, New Mexico & Florida. Includes Articles, Agent & US Address.</p>
+                            <div class="pt-2 border-t border-cream-muted flex justify-between items-center text-xs">
+                                <span class="font-bold text-espresso">Includes EIN Support</span>
+                                <a href="#packages" class="font-extrabold text-copper-dark hover:underline flex items-center gap-1">Explore LLCs <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: IRS ITIN -->
+                        <div class="col-span-6 p-4 rounded-xl bg-cream-soft border border-cream-muted hover:border-copper transition space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-copper/20 text-copper-dark flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-espresso text-sm">IRS ITIN Registration</h4>
+                                    <span class="text-[10px] text-copper-dark font-extrabold uppercase">Timeline ~ 2 Months ($250+)</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-espresso-soft leading-relaxed">Certified Acceptance Agent (CAA) verification for Form W-7. No passport physical posting needed.</p>
+                            <div class="pt-2 border-t border-cream-muted flex justify-between items-center text-xs">
+                                <span class="font-bold text-espresso">Certified CAA Review</span>
+                                <a href="#packages" class="font-extrabold text-copper-dark hover:underline flex items-center gap-1">Apply ITIN <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: Quick Highlights Bar -->
+                        <div class="col-span-12 p-3 bg-espresso rounded-xl text-cream flex items-center justify-between text-xs">
+                            <span class="flex items-center gap-2 font-semibold">
+                                <i class="fa-solid fa-shield-halved text-copper"></i> Need state filing fee comparison? Use our custom estimator tool.
+                            </span>
+                            <a href="#calculator" class="px-3 py-1 bg-copper text-espresso font-bold rounded-lg hover:bg-copper-light transition text-[11px]">Open Calculator</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEGA MENU 2: PAYMENT GATEWAYS -->
+                <div class="relative nav-item-dropdown py-6">
+                    <a href="#gateways" class="nav-link hover:text-copper-dark transition-colors flex items-center gap-1.5">
+                        <span>Payment Solutions</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-copper transition-transform"></i>
+                    </a>
+
+                    <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-cream-pure p-6 rounded-2xl border border-cream-muted shadow-2xl grid grid-cols-2 gap-4">
+                        <a href="#gateways" class="p-3.5 rounded-xl hover:bg-cream-soft border border-transparent hover:border-cream-muted transition flex items-center gap-3 group">
+                            <div class="w-10 h-10 rounded-xl bg-espresso/5 flex items-center justify-center text-espresso text-2xl group-hover:bg-espresso group-hover:text-copper transition">
+                                <i class="fa-brands fa-stripe"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-xs text-espresso">Stripe Merchant Account</div>
+                                <div class="text-[11px] text-espresso-soft">Verified US Stripe setup with EIN & bank</div>
+                            </div>
+                        </a>
+
+                        <a href="#gateways" class="p-3.5 rounded-xl hover:bg-cream-soft border border-transparent hover:border-cream-muted transition flex items-center gap-3 group">
+                            <div class="w-10 h-10 rounded-xl bg-copper/10 flex items-center justify-center text-copper-dark text-xl group-hover:bg-copper group-hover:text-espresso transition">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-xs text-espresso">Wise Business Banking</div>
+                                <div class="text-[11px] text-espresso-soft">USD, EUR, GBP multi-currency routing</div>
+                            </div>
+                        </a>
+
+                        <a href="#gateways" class="p-3.5 rounded-xl hover:bg-cream-soft border border-transparent hover:border-cream-muted transition flex items-center gap-3 group">
+                            <div class="w-10 h-10 rounded-xl bg-espresso/5 flex items-center justify-center text-espresso text-xl group-hover:bg-espresso group-hover:text-copper transition">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-xs text-espresso">Authorize.Net Integration</div>
+                                <div class="text-[11px] text-espresso-soft">Direct credit card gateway API</div>
+                            </div>
+                        </a>
+
+                        <a href="#gateways" class="p-3.5 rounded-xl hover:bg-cream-soft border border-transparent hover:border-cream-muted transition flex items-center gap-3 group">
+                            <div class="w-10 h-10 rounded-xl bg-espresso/5 flex items-center justify-center text-espresso text-xl group-hover:bg-espresso group-hover:text-copper transition">
+                                <i class="fa-brands fa-paypal"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-xs text-espresso">PayPal & Payoneer</div>
+                                <div class="text-[11px] text-espresso-soft">Cross-border merchant verification</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MENU 3: USA LLC FORMATION HUB -->
+                <div class="relative nav-item-dropdown py-6">
+                    <a href="#packages" class="nav-link hover:text-copper-dark transition-colors flex items-center gap-1.5">
+                        <span>USA States</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-copper transition-transform"></i>
+                    </a>
+
+                    <div class="mega-menu absolute top-full left-0 w-[420px] bg-cream-pure p-5 rounded-2xl border border-cream-muted shadow-2xl space-y-3">
+                        <div class="text-[10px] font-black tracking-widest text-copper-dark uppercase">Top Incorporation States</div>
+                        
+                        <div class="grid grid-cols-2 gap-2 text-xs font-bold text-espresso">
+                            <div class="p-2.5 rounded-xl bg-cream-soft border border-cream-muted flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-copper"></i> Wyoming ($150+)
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-cream-soft border border-cream-muted flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-copper"></i> Delaware ($150+)
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-cream-soft border border-cream-muted flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-copper"></i> New Mexico ($150+)
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-cream-soft border border-cream-muted flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-copper"></i> Florida ($150+)
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-espresso-soft leading-relaxed pt-2 border-t border-cream-muted">
+                            Need guidance on state taxes or anonymity? Talk to our compliance experts.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="#services" class="nav-link hover:text-copper-dark transition-colors py-2">Marketing & Accounts</a>
+                <a href="#calculator" class="nav-link hover:text-copper-dark transition-colors py-2">Estimator</a>
+                <a href="#faq" class="nav-link hover:text-copper-dark transition-colors py-2">FAQ</a>
+
+            </nav>
+
+            <!-- Search, Currency & Action Buttons -->
+            <div class="hidden md:flex items-center gap-3">
+                
+                <!-- Quick Search Trigger -->
+                <button onclick="toggleSearchModal(true)" class="w-9 h-9 rounded-xl bg-cream-soft hover:bg-espresso hover:text-cream text-espresso border border-cream-muted flex items-center justify-center transition" title="Search Services (Ctrl+K)">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </button>
+
+                <!-- Currency Selector -->
+                <select class="px-2.5 py-2 rounded-xl bg-cream-soft text-espresso font-bold text-xs border border-cream-muted focus:outline-none cursor-pointer">
+                    <option value="USD">$ USD</option>
+                    <option value="EUR">€ EUR</option>
+                    <option value="GBP">£ GBP</option>
+                </select>
+
+                <!-- Action CTAs -->
+                
+                
+                <button onclick="openModal('Get Started - Navigation Call')" class="px-4 py-2.5 rounded-xl bg-espresso hover:bg-espresso-light text-cream font-bold text-xs shadow-md transition-all hover:scale-105 border border-copper/40 flex items-center gap-2">
+                    <span>Consultation</span>
+                    <i class="fa-solid fa-arrow-right text-copper text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Drawer Trigger Button -->
+            <div class="flex items-center gap-2 xl:hidden">
+                <button onclick="toggleSearchModal(true)" class="w-10 h-10 rounded-xl bg-cream-soft text-espresso border border-cream-muted flex items-center justify-center">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button>
+                <button id="mobile-menu-btn" onclick="toggleMobileDrawer(true)" class="w-10 h-10 rounded-xl bg-espresso text-cream flex items-center justify-center focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MOBILE & TABLET OFF-CANVAS SLIDING NAVIGATION DRAWER -->
+    <div id="drawer-backdrop" onclick="toggleMobileDrawer(false)" class="fixed inset-0 z-50 bg-espresso-dark/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    
+    <div id="mobile-drawer" class="mobile-drawer fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-cream-pure shadow-2xl border-l border-cream-muted flex flex-col justify-between overflow-y-auto">
+        <div>
+            <!-- Mobile Header -->
+            <div class="p-5 bg-espresso text-cream flex items-center justify-between border-b border-copper/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-wolf-pack-battalion text-copper text-xl"></i>
+                    <span class="font-black text-base tracking-wider">WOLFIN<span class="text-copper-light">CROP</span></span>
+                </div>
+                <button onclick="toggleMobileDrawer(false)" class="w-8 h-8 rounded-lg bg-espresso-light text-cream-muted hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Links with Accordion sub-menus -->
+            <div class="p-6 space-y-4 text-xs font-bold text-espresso">
+                <a href="#home" onclick="toggleMobileDrawer(false)" class="block py-2 text-copper-dark border-b border-cream-muted">Home</a>
+                
+                <!-- Services Accordion -->
+                <div class="border-b border-cream-muted pb-2">
+                    <button onclick="toggleMobileAccordion('mobile-acc-services')" class="w-full flex justify-between items-center py-2 text-left text-espresso">
+                        <span>Services & Formation</span>
+                        <i class="fa-solid fa-chevron-down text-copper text-[10px]"></i>
+                    </button>
+                    <div id="mobile-acc-services" class="hidden pl-3 pt-2 space-y-2 text-espresso-soft text-[11px] font-normal">
+                        <a href="#packages" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark font-semibold">USA LLC Formation (24h INC @ $150+)</a>
+                        <a href="#packages" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark font-semibold">IRS ITIN Registration (2 Mo. @ $250+)</a>
+                        <a href="#packages" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark">EIN Tax ID Fast-Track</a>
+                        <a href="#packages" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark">Registered Agent Service</a>
+                    </div>
+                </div>
+
+                <!-- Gateways Accordion -->
+                <div class="border-b border-cream-muted pb-2">
+                    <button onclick="toggleMobileAccordion('mobile-acc-gateways')" class="w-full flex justify-between items-center py-2 text-left text-espresso">
+                        <span>Payment Solutions</span>
+                        <i class="fa-solid fa-chevron-down text-copper text-[10px]"></i>
+                    </button>
+                    <div id="mobile-acc-gateways" class="hidden pl-3 pt-2 space-y-2 text-espresso-soft text-[11px] font-normal">
+                        <a href="#gateways" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark font-semibold">Stripe Merchant Setup</a>
+                        <a href="#gateways" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark">Wise Business Multi-Currency</a>
+                        <a href="#gateways" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark">Authorize.Net API Checkout</a>
+                        <a href="#gateways" onclick="toggleMobileDrawer(false)" class="block py-1 hover:text-copper-dark">PayPal & Payoneer Services</a>
+                    </div>
+                </div>
+
+                <a href="#services" onclick="toggleMobileDrawer(false)" class="block py-2 border-b border-cream-muted">Marketing & Accounts</a>
+                <a href="#calculator" onclick="toggleMobileDrawer(false)" class="block py-2 border-b border-cream-muted">Fee Estimator Calculator</a>
+                <a href="#faq" onclick="toggleMobileDrawer(false)" class="block py-2 border-b border-cream-muted">FAQ</a>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Quick Actions -->
+        <div class="p-6 bg-cream-soft border-t border-cream-muted space-y-3">
+            <button onclick="toggleMobileDrawer(false); openModal('Mobile Consultation')" class="w-full py-3 rounded-xl bg-espresso text-cream font-bold text-xs flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-check text-copper"></i> Book Free Consultation
+            </button>
+            <a href="https://wa.me/+917505697279" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs text-center flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i> Chat on WhatsApp
+            </a>
+            <div class="text-[10px] text-center text-espresso-soft pt-2">
+                Direct Line: +917505697279
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION WITH DYNAMIC SLIDER -->
+    <section id="home" class="relative pt-8 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-cream-soft via-cream-pure to-cream overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- CAROUSEL WRAPPER -->
+            <div id="hero-carousel" class="relative min-h-[580px] lg:min-h-[500px] flex items-center">
+                
+                <!-- SLIDE 1: LLC 24 HRS -->
+                <div class="hero-slide active w-full">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-copper/10 border border-copper/30 text-xs sm:text-sm font-bold text-copper-dark">
+                                <i class="fa-solid fa-bolt text-copper"></i> Instant USA Company Registration
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-espresso leading-tight">
+                                Form Your USA LLC In <span class="text-gradient-copper">24 Hours</span>
+                            </h1>
+                            <p class="text-espresso-soft text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                                Complete legal LLC registration in Wyoming, Delaware, Florida, or New Mexico. No US residency or SSN required. Charges starting from $150.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                                <a href="#packages" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-espresso text-cream font-extrabold text-center shadow-lg shadow-espresso/20 hover:bg-espresso-light transition-all border border-copper/40">
+                                    Incorporate Now ($150+)
+                                </a>
+                                <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cream-pure text-espresso font-bold text-center border border-cream-muted hover:border-copper transition">
+                                    Calculate Total Fee
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5">
+                            <div class="glass-panel-dark p-8 rounded-3xl text-cream relative shadow-2xl overflow-hidden border border-copper/40">
+                                <div class="flex justify-between items-center border-b border-espresso-soft/50 pb-4 mb-6">
+                                    <span class="text-xs uppercase tracking-widest font-extrabold text-copper-light">Express LLC Package</span>
+                                    <span class="px-3 py-1 bg-copper/30 text-copper-light font-bold text-xs rounded-full border border-copper/50">24 Hrs INC</span>
+                                </div>
+                                <div class="text-4xl font-black text-white mb-2">$150 <span class="text-xs text-cream-muted font-normal">+ State Fee</span></div>
+                                <p class="text-xs text-cream-muted mb-6">All inclusive USA legal setup with full document delivery.</p>
+                                <ul class="space-y-3 text-xs text-cream mb-6">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> Articles of Organization Filing</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> Registered Agent (1st Year Included)</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> Official US Address & Mail Scanning</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> EIN (Tax ID) Support</li>
+                                </ul>
+                                <button onclick="openModal('USA LLC Formation ($150+)')" class="w-full py-3.5 rounded-xl bg-copper hover:bg-copper-dark text-espresso font-black transition text-sm">
+                                    Start 24h LLC Incorporation
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: ITIN 2 MONTHS -->
+                <div class="hero-slide w-full">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-espresso/10 border border-espresso/20 text-xs sm:text-sm font-bold text-espresso">
+                                <i class="fa-solid fa-id-card text-copper-dark"></i> IRS Tax Filing Solution
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-espresso leading-tight">
+                                Get Your IRS ITIN In <span class="text-gradient-copper">2 Months</span>
+                            </h1>
+                            <p class="text-espresso-soft text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                                Acquire your official Individual Taxpayer Identification Number from the IRS. Starting from $250 without risk to original documents.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                                <button onclick="openModal('ITIN Registration ($250)')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-copper text-espresso font-extrabold text-center shadow-lg shadow-copper/20 hover:bg-copper-dark hover:text-white transition-all">
+                                    Apply For ITIN ($250)
+                                </button>
+                                <a href="#faq" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cream-pure text-espresso font-bold text-center border border-cream-muted hover:border-copper transition">
+                                    Read Requirements
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5">
+                            <div class="glass-panel-dark p-8 rounded-3xl text-cream relative shadow-2xl overflow-hidden border border-copper/40">
+                                <div class="flex justify-between items-center border-b border-espresso-soft/50 pb-4 mb-6">
+                                    <span class="text-xs uppercase tracking-widest font-extrabold text-copper-light">IRS Form W-7 Package</span>
+                                    <span class="px-3 py-1 bg-copper/30 text-copper-light font-bold text-xs rounded-full border border-copper/50">2 Months</span>
+                                </div>
+                                <div class="text-4xl font-black text-white mb-2">$250 <span class="text-xs text-cream-muted font-normal">Flat Rate</span></div>
+                                <p class="text-xs text-cream-muted mb-6">Handled by Certified Acceptance Agents (CAA).</p>
+                                <ul class="space-y-3 text-xs text-cream mb-6">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> Certified W-7 Application Review</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> Safe Passport Certification</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-copper-light"></i> IRS Submission & Live Tracking</li>
+                                </ul>
+                                <button onclick="openModal('ITIN Registration ($250)')" class="w-full py-3.5 rounded-xl bg-copper hover:bg-copper-dark text-espresso font-black transition text-sm">
+                                    Apply For ITIN Number
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: PAYMENT GATEWAYS -->
+                <div class="hero-slide w-full">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-copper/10 border border-copper/30 text-xs sm:text-sm font-bold text-copper-dark">
+                                <i class="fa-solid fa-credit-card text-copper"></i> Global Merchant Integration
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-espresso leading-tight">
+                                Stripe, Wise, Authorize.Net, <span class="text-gradient-copper">Payoneer & PayPal</span>
+                            </h1>
+                            <p class="text-espresso-soft text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                                Complete setup and verification for world-class payment processors and multi-currency business accounts.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                                <a href="#gateways" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-espresso text-cream font-extrabold text-center shadow-lg shadow-espresso/20 hover:bg-espresso-light transition-all border border-copper/40">
+                                    Explore Gateways
+                                </a>
+                                <button onclick="openModal('Gateway Consultation')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cream-pure text-espresso font-bold text-center border border-cream-muted hover:border-copper transition">
+                                    Request Gateway Setup
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5">
+                            <div class="glass-card p-6 rounded-3xl border border-cream-muted shadow-xl space-y-3">
+                                <div class="p-3.5 rounded-xl bg-cream-soft flex items-center justify-between border border-cream-muted">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-brands fa-stripe text-espresso text-2xl"></i>
+                                        <span class="font-bold text-sm text-espresso">Stripe Merchant</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-copper-dark px-2.5 py-1 bg-copper/10 rounded-full">Verified</span>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-cream-soft flex items-center justify-between border border-cream-muted">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-money-bill-transfer text-copper-dark text-xl"></i>
+                                        <span class="font-bold text-sm text-espresso">Wise Business</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-copper-dark px-2.5 py-1 bg-copper/10 rounded-full">Multi-Currency</span>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-cream-soft flex items-center justify-between border border-cream-muted">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-brands fa-paypal text-espresso text-xl"></i>
+                                        <span class="font-bold text-sm text-espresso">PayPal & Payoneer</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-copper-dark px-2.5 py-1 bg-copper/10 rounded-full">Cross-Border</span>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-cream-soft flex items-center justify-between border border-cream-muted">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-shield-halved text-espresso text-xl"></i>
+                                        <span class="font-bold text-sm text-espresso">Authorize.Net API</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-copper-dark px-2.5 py-1 bg-copper/10 rounded-full">Merchant Checkout</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: DIGITAL MARKETING & ACCOUNTS -->
+                <div class="hero-slide w-full">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-copper/10 border border-copper/30 text-xs sm:text-sm font-bold text-copper-dark">
+                                <i class="fa-solid fa-chart-line text-copper"></i> Marketing & Accounting
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-espresso leading-tight">
+                                Scale Growth & <span class="text-gradient-copper">Maintain Compliance</span>
+                            </h1>
+                            <p class="text-espresso-soft text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                                End-to-end digital marketing (SEO & Paid Ads) alongside certified corporate accounting and annual IRS filings.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-espresso text-cream font-extrabold text-center shadow-lg shadow-espresso/20 hover:bg-espresso-light transition-all border border-copper/40">
+                                    View Growth Services
+                                </a>
+                                <button onclick="openModal('Accounting & Marketing Bundle')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cream-pure text-espresso font-bold text-center border border-cream-muted hover:border-copper transition">
+                                    Book Strategy Call
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5">
+                            <div class="glass-card p-8 rounded-3xl border border-cream-muted shadow-xl space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-espresso text-copper flex items-center justify-center text-xl flex-shrink-0">
+                                        <i class="fa-solid fa-bullhorn"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-extrabold text-espresso text-base">Digital Marketing</h4>
+                                        <p class="text-xs text-espresso-soft mt-1">Google Search Ads, Meta Campaigns, Brand Strategy, & Conversions.</p>
+                                    </div>
+                                </div>
+                                <div class="border-t border-cream-muted pt-4 flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-copper/20 text-copper-dark flex items-center justify-center text-xl flex-shrink-0">
+                                        <i class="fa-solid fa-calculator"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-extrabold text-espresso text-base">Accounts & Tax Filing</h4>
+                                        <p class="text-xs text-espresso-soft mt-1">IRS Form 5472 / 1120 filing, monthly bookkeeping, and financial compliance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTROLS AND DOTS -->
+            <div class="mt-8 pt-6 border-t border-cream-muted flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <button onclick="goToSlide(0)" class="slide-dot w-8 h-2.5 rounded-full bg-copper transition-all"></button>
+                    <button onclick="goToSlide(1)" class="slide-dot w-2.5 h-2.5 rounded-full bg-cream-darker hover:bg-copper transition-all"></button>
+                    <button onclick="goToSlide(2)" class="slide-dot w-2.5 h-2.5 rounded-full bg-cream-darker hover:bg-copper transition-all"></button>
+                    <button onclick="goToSlide(3)" class="slide-dot w-2.5 h-2.5 rounded-full bg-cream-darker hover:bg-copper transition-all"></button>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button id="autoplay-btn" onclick="toggleAutoplay()" class="text-xs font-bold text-espresso-soft hover:text-espresso flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cream-soft border border-cream-muted">
+                        <i id="autoplay-icon" class="fa-solid fa-pause text-copper"></i> <span id="autoplay-text">Autoplay On</span>
+                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="prevSlide()" class="w-10 h-10 rounded-xl bg-cream-pure border border-cream-muted text-espresso hover:border-copper hover:bg-espresso hover:text-cream flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-left text-sm"></i>
+                        </button>
+                        <button onclick="nextSlide()" class="w-10 h-10 rounded-xl bg-cream-pure border border-cream-muted text-espresso hover:border-copper hover:bg-espresso hover:text-cream flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTED TIMINGS & PRICING BAR -->
+    <section id="packages" class="py-12 bg-espresso text-cream border-y border-copper/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-6 rounded-2xl bg-espresso-light border border-copper/30 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-light flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-cream-muted uppercase font-bold">USA LLC INC</div>
+                        <div class="text-xl font-black text-white">24 Hours Turnaround</div>
+                        <div class="text-xs text-copper-light mt-0.5">Starting from $150</div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-espresso-light border border-copper/30 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-light flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-cream-muted uppercase font-bold">IRS ITIN</div>
+                        <div class="text-xl font-black text-white">2 Months Processing</div>
+                        <div class="text-xs text-copper-light mt-0.5">Starting from $250</div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-espresso-light border border-copper/30 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-light flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-cream-muted uppercase font-bold">Payment Gateways</div>
+                        <div class="text-xl font-black text-white">Stripe, Wise, PayPal</div>
+                        <div class="text-xs text-copper-light mt-0.5">Verified Accounts</div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-espresso-light border border-copper/30 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-light flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-cream-muted uppercase font-bold">Growth & Finance</div>
+                        <div class="text-xl font-black text-white">Marketing & Accounting</div>
+                        <div class="text-xs text-copper-light mt-0.5">Full Turnkey Support</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED USA LLC & ITIN SERVICES SECTION -->
+    <section class="py-20 bg-cream-pure">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black uppercase tracking-widest text-copper-dark bg-copper/10 px-3 py-1 rounded-full">Core Incorporation Services</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-espresso mt-3">US Entity Formation & IRS Tax ID Filing</h2>
+                <p class="text-espresso-soft mt-3 text-sm sm:text-base">Designed for global entrepreneurs and founders expanding into the United States market.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- LLC Box -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 bg-copper text-espresso font-black text-xs px-4 py-1.5 rounded-bl-2xl">
+                        INC IN 24 HOURS
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-espresso text-copper-light flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-espresso">USA LLC Formation</h3>
+                        <p class="text-espresso-soft text-xs sm:text-sm mt-2 leading-relaxed">
+                            Form your company in premier states like Wyoming, Delaware, New Mexico, or Florida. 100% online registration without needing to visit the US.
+                        </p>
+                        
+                        <div class="my-6 p-4 rounded-2xl bg-cream-soft border border-cream-muted">
+                            <span class="text-xs font-bold text-espresso-soft uppercase block">Turnaround Time</span>
+                            <span class="text-lg font-black text-espresso flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-copper"></i> Guaranteed 24 Hours Express Filing
+                            </span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-espresso mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Name Availability Search & Reservation</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Official Articles of Organization Preparation</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Registered Agent Representation (1 Full Year)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> US Commercial Address & Document Scanning</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> EIN Tax ID Assistance & Operating Agreement</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 border-t border-cream-muted flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-espresso-soft block font-bold uppercase">Starting Charges</span>
+                            <span class="text-3xl font-black text-espresso">$150 <span class="text-xs text-espresso-soft font-normal">+ state fee</span></span>
+                        </div>
+                        <button onclick="openModal('USA LLC Formation ($150+)')" class="px-6 py-3 rounded-xl bg-espresso hover:bg-espresso-light text-cream font-bold text-xs transition">
+                            Register LLC Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITIN Box -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 bg-espresso text-copper-light font-black text-xs px-4 py-1.5 rounded-bl-2xl">
+                        IRS TIMELINE: 2 MONTHS
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-copper/20 text-copper-dark flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-id-card font-bold"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-espresso">ITIN Registration</h3>
+                        <p class="text-espresso-soft text-xs sm:text-sm mt-2 leading-relaxed">
+                            Obtain your Individual Taxpayer Identification Number directly from the IRS. Essential for non-US residents to open bank accounts and fulfill US tax obligations.
+                        </p>
+                        
+                        <div class="my-6 p-4 rounded-2xl bg-cream-soft border border-cream-muted">
+                            <span class="text-xs font-bold text-espresso-soft uppercase block">Processing Timeline</span>
+                            <span class="text-lg font-black text-espresso flex items-center gap-2">
+                                <i class="fa-solid fa-clock text-copper"></i> Official IRS Processing ~ 2 Months
+                            </span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-espresso mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Certified IRS Form W-7 Application</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> CAA Review (No risk to original passport)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Preparation of Tax Exception Documents</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Direct Submission to IRS D.C. Headquarters</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-copper-dark"></i> Real-time Application Tracking Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 border-t border-cream-muted flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-espresso-soft block font-bold uppercase">Starting Charges</span>
+                            <span class="text-3xl font-black text-espresso">$250 <span class="text-xs text-espresso-soft font-normal">flat fee</span></span>
+                        </div>
+                        <button onclick="openModal('ITIN Registration ($250)')" class="px-6 py-3 rounded-xl bg-copper hover:bg-copper-dark text-espresso font-black text-xs transition">
+                            Apply For ITIN
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT GATEWAYS SECTION -->
+    <section id="gateways" class="py-20 bg-cream border-t border-cream-muted relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black uppercase tracking-widest text-copper-dark bg-copper/10 px-3 py-1 rounded-full">Financial Infrastructure</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-espresso mt-3">Merchant Payment Gateways & Banking</h2>
+                <p class="text-espresso-soft mt-3 text-sm sm:text-base">We set up, verify, and configure leading international payment gateways for seamless cross-border transactions.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Stripe -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-brands fa-stripe text-espresso text-4xl"></i>
+                            <span class="px-2.5 py-1 rounded-full bg-copper/10 text-copper-dark font-extrabold text-[10px]">VERIFIED MERCHANT</span>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Stripe Business Setup</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Full setup of your Stripe US business account linked directly with your LLC and US bank credentials.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Stripe Setup')" class="w-full py-2.5 rounded-xl bg-cream-soft hover:bg-espresso hover:text-cream text-espresso font-bold text-xs border border-cream-muted transition">
+                        Setup Stripe Account
+                    </button>
+                </div>
+
+                <!-- Wise -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-espresso text-copper flex items-center justify-center font-black">W</div>
+                            <span class="px-2.5 py-1 rounded-full bg-copper/10 text-copper-dark font-extrabold text-[10px]">MULTI-CURRENCY</span>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Wise Business Banking</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Receive USD, EUR, GBP, and AUD with dedicated account numbers, IBANs, and routing details.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Wise Business Setup')" class="w-full py-2.5 rounded-xl bg-cream-soft hover:bg-espresso hover:text-cream text-espresso font-bold text-xs border border-cream-muted transition">
+                        Setup Wise Account
+                    </button>
+                </div>
+
+                <!-- Authorize.Net -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-shield-halved text-espresso text-2xl"></i>
+                            <span class="px-2.5 py-1 rounded-full bg-copper/10 text-copper-dark font-extrabold text-[10px]">API INTEGRATION</span>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Authorize.Net Integration</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            High-security credit card processing gateway integrated directly into your e-commerce platform or website.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Authorize.Net Setup')" class="w-full py-2.5 rounded-xl bg-cream-soft hover:bg-espresso hover:text-cream text-espresso font-bold text-xs border border-cream-muted transition">
+                        Setup Authorize.Net
+                    </button>
+                </div>
+
+                <!-- Payoneer -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-globe text-espresso text-2xl"></i>
+                            <span class="px-2.5 py-1 rounded-full bg-copper/10 text-copper-dark font-extrabold text-[10px]">GLOBAL PAYMENTS</span>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Payoneer Account Setup</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Receive payments from global marketplaces like Amazon, eBay, and Walmart directly into your business bank.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Payoneer Setup')" class="w-full py-2.5 rounded-xl bg-cream-soft hover:bg-espresso hover:text-cream text-espresso font-bold text-xs border border-cream-muted transition">
+                        Setup Payoneer
+                    </button>
+                </div>
+
+                <!-- PayPal -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-brands fa-paypal text-espresso text-3xl"></i>
+                            <span class="px-2.5 py-1 rounded-full bg-copper/10 text-copper-dark font-extrabold text-[10px]">PAYPAL BUSINESS</span>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">PayPal Services</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Complete setup, compliance verification, and integration of PayPal Business for seamless client checkout.
+                        </p>
+                    </div>
+                    <button onclick="openModal('PayPal Services')" class="w-full py-2.5 rounded-xl bg-cream-soft hover:bg-espresso hover:text-cream text-espresso font-bold text-xs border border-cream-muted transition">
+                        Setup PayPal Services
+                    </button>
+                </div>
+
+                <!-- Custom Gateway Bundle -->
+                <div class="p-6 rounded-2xl bg-espresso text-cream flex flex-col justify-between border border-copper/30 shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-layer-group text-copper-light text-2xl"></i>
+                            <span class="px-2.5 py-1 rounded-full bg-copper/20 text-copper-light font-extrabold text-[10px]">ALL-IN-ONE</span>
+                        </div>
+                        <h3 class="font-extrabold text-white text-lg mb-2">Multi-Gateway Bundle</h3>
+                        <p class="text-xs text-cream-muted leading-relaxed mb-4">
+                            Get Stripe, Wise, and PayPal configured together in one complete package at a discounted rate.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Multi-Gateway Bundle')" class="w-full py-2.5 rounded-xl bg-copper hover:bg-copper-dark text-espresso font-black text-xs transition">
+                        Get All-In-One Bundle
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPREHENSIVE DIGITAL MARKETING & ACCOUNTS SERVICES -->
+    <section id="services" class="py-20 bg-cream-pure">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black uppercase tracking-widest text-copper-dark bg-copper/10 px-3 py-1 rounded-full">Growth & Compliance</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-espresso mt-3">Digital Marketing & Accounting Services</h2>
+                <p class="text-espresso-soft mt-3 text-sm sm:text-base">Expand your audience with targeted advertising while maintaining 100% tax and financial compliance.</p>
+            </div>
+
+            <!-- Service Filter Tabs -->
+            <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+                <div class="p-1.5 rounded-2xl bg-cream-soft border border-cream-muted flex gap-2">
+                    <button onclick="filterGrid('all')" class="grid-tab-btn active px-5 py-2.5 rounded-xl text-xs font-bold transition bg-espresso text-cream" data-tab="all">All Services</button>
+                    <button onclick="filterGrid('marketing')" class="grid-tab-btn px-5 py-2.5 rounded-xl text-xs font-bold text-espresso-soft hover:text-espresso transition" data-tab="marketing">Digital Marketing</button>
+                    <button onclick="filterGrid('accounting')" class="grid-tab-btn px-5 py-2.5 rounded-xl text-xs font-bold text-espresso-soft hover:text-espresso transition" data-tab="accounting">Accounts & Tax</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="grid-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-cat="marketing">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-espresso text-copper-light flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Google & PPC Ad Campaigns</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            High-ROI Search, Display, and Shopping ads on Google to generate high-converting buyer traffic to your store.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Google PPC Advertising')" class="text-xs font-extrabold text-copper-dark hover:underline flex items-center gap-1">
+                        Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="grid-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-cat="marketing">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-dark flex items-center justify-center text-xl mb-4">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Meta Ads (Facebook & IG)</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Laser-targeted social media advertising campaigns designed to scale sales, retarget leads, and build brand awareness.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Meta Ads Management')" class="text-xs font-extrabold text-copper-dark hover:underline flex items-center gap-1">
+                        Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="grid-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-cat="marketing">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-espresso text-copper-light flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-magnifying-glass font-bold"></i>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">SEO & Content Optimization</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            On-page and off-page search engine optimization to rank your company on top of organic Google search results.
+                        </p>
+                    </div>
+                    <button onclick="openModal('SEO Services')" class="text-xs font-extrabold text-copper-dark hover:underline flex items-center gap-1">
+                        Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="grid-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-cat="accounting">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-dark flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">IRS Tax Compliance & Filings</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Preparation and filing of mandatory IRS Form 5472 and Form 1120 for non-resident single-member US LLCs.
+                        </p>
+                    </div>
+                    <button onclick="openModal('IRS Tax Filings')" class="text-xs font-extrabold text-copper-dark hover:underline flex items-center gap-1">
+                        Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="grid-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-cat="accounting">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-espresso text-copper-light flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">Bookkeeping & Reporting</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Monthly financial reports, balance sheets, profit & loss statements kept ready for bank compliance audits.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Monthly Bookkeeping')" class="text-xs font-extrabold text-copper-dark hover:underline flex items-center gap-1">
+                        Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="grid-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-cat="accounting">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-copper/20 text-copper-dark flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-vault"></i>
+                        </div>
+                        <h3 class="font-extrabold text-espresso text-lg mb-2">State Annual Franchise Tax</h3>
+                        <p class="text-xs text-espresso-soft leading-relaxed mb-4">
+                            Timely state report submissions (Wyoming, Delaware, New Mexico) to prevent state penalties or LLC dissolution.
+                        </p>
+                    </div>
+                    <button onclick="openModal('State Annual Franchise Tax')" class="text-xs font-extrabold text-copper-dark hover:underline flex items-center gap-1">
+                        Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL-TIME INTERACTIVE COST ESTIMATOR / PRICING CALCULATOR -->
+    <section id="calculator" class="py-20 bg-espresso text-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-black uppercase tracking-widest text-copper-light bg-copper/20 px-3 py-1 rounded-full">Transparent Pricing</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">Custom Package Cost Estimator</h2>
+                    <p class="text-cream-muted text-sm leading-relaxed">
+                        Customize your business setup by selecting required services. Get an immediate, transparent estimate without hidden charges.
+                    </p>
+
+                    <div class="p-6 rounded-2xl bg-espresso-medium border border-copper/30 space-y-3">
+                        <div class="text-xs font-bold text-copper-light uppercase">Why WOLFINCROP LLC?</div>
+                        <div class="flex items-center gap-2 text-xs text-cream">
+                            <i class="fa-solid fa-check text-copper-light"></i> 24-Hour Express USA LLC Registration Guarantee
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-cream">
+                            <i class="fa-solid fa-check text-copper-light"></i> Certified CAA Processing for 2-Month ITIN
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-cream">
+                            <i class="fa-solid fa-check text-copper-light"></i> Full Merchant & Multi-Currency Gateways
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-panel-dark p-6 sm:p-8 rounded-3xl border border-copper/40 shadow-2xl space-y-6">
+                        
+                        <div class="flex justify-between items-center pb-4 border-b border-espresso-soft/50">
+                            <h3 class="text-xl font-bold text-white">Select Services</h3>
+                            <span class="text-xs text-copper-light">Instant Calculation</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            
+                            <!-- LLC Option -->
+                            <label class="flex items-center justify-between p-4 rounded-xl bg-espresso-dark/90 border border-espresso-soft/80 cursor-pointer hover:border-copper transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" class="calc-check w-5 h-5 rounded text-copper focus:ring-copper bg-espresso border-espresso-soft" data-price="150" data-name="USA LLC Formation (24h INC)" checked>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-bold text-white">USA LLC Formation (24 Hrs INC)</div>
+                                        <div class="text-[11px] text-cream-muted">Registered Agent, State Filing, US Address</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-black text-copper-light">$150</span>
+                            </label>
+
+                            <!-- ITIN Option -->
+                            <label class="flex items-center justify-between p-4 rounded-xl bg-espresso-dark/90 border border-espresso-soft/80 cursor-pointer hover:border-copper transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" class="calc-check w-5 h-5 rounded text-copper focus:ring-copper bg-espresso border-espresso-soft" data-price="250" data-name="IRS ITIN Application (2 Months)">
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-bold text-white">ITIN Registration (2 Months Timeline)</div>
+                                        <div class="text-[11px] text-cream-muted">IRS W-7 CAA Certification & Filing</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-black text-copper-light">$250</span>
+                            </label>
+
+                            <!-- Stripe Gateway -->
+                            <label class="flex items-center justify-between p-4 rounded-xl bg-espresso-dark/90 border border-espresso-soft/80 cursor-pointer hover:border-copper transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" class="calc-check w-5 h-5 rounded text-copper focus:ring-copper bg-espresso border-espresso-soft" data-price="180" data-name="Stripe & Payment Gateways">
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-bold text-white">Stripe & Authorize.Net Integration</div>
+                                        <div class="text-[11px] text-cream-muted">Merchant Account Setup & Verification</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-black text-copper-light">$180</span>
+                            </label>
+
+                            <!-- Wise & PayPal -->
+                            <label class="flex items-center justify-between p-4 rounded-xl bg-espresso-dark/90 border border-espresso-soft/80 cursor-pointer hover:border-copper transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" class="calc-check w-5 h-5 rounded text-copper focus:ring-copper bg-espresso border-espresso-soft" data-price="150" data-name="Wise, PayPal & Payoneer Setup">
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-bold text-white">Wise, PayPal & Payoneer Business</div>
+                                        <div class="text-[11px] text-cream-muted">Multi-currency banking setup</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-black text-copper-light">$150</span>
+                            </label>
+
+                            <!-- Marketing & Accounts -->
+                            <label class="flex items-center justify-between p-4 rounded-xl bg-espresso-dark/90 border border-espresso-soft/80 cursor-pointer hover:border-copper transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" class="calc-check w-5 h-5 rounded text-copper focus:ring-copper bg-espresso border-espresso-soft" data-price="120" data-name="Accounting & IRS Compliance">
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-bold text-white">Annual Accounts & Tax Filing</div>
+                                        <div class="text-[11px] text-cream-muted">IRS Form 5472 & Annual Bookkeeping</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-black text-copper-light">$120</span>
+                            </label>
+
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-espresso border border-copper/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-cream-muted font-bold block uppercase">Calculated Total</span>
+                                <div id="calc-display" class="text-3xl font-black text-white">$150</div>
+                            </div>
+                            <button onclick="bookCalculatedPackage()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-copper hover:bg-copper-dark text-espresso font-black text-xs transition shadow-lg">
+                                Lock In This Package <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section id="faq" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-xs font-black uppercase tracking-widest text-copper-dark bg-copper/10 px-3 py-1 rounded-full">Got Questions?</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-espresso mt-3">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <div class="glass-card rounded-2xl overflow-hidden border border-cream-muted">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-sm sm:text-base font-bold text-espresso">Can non-US residents form an LLC with WOLFINCROP?</span>
+                        <i class="fa-solid fa-chevron-down text-copper transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-espresso-soft leading-relaxed border-t border-cream-muted pt-4">
+                        Yes, 100%. You do not need to be a US citizen, have a US address, or possess a Social Security Number (SSN). We handle the complete formation remotely in 24 hours.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden border border-cream-muted">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-sm sm:text-base font-bold text-espresso">How long does the ITIN process take?</span>
+                        <i class="fa-solid fa-chevron-down text-copper transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-espresso-soft leading-relaxed border-t border-cream-muted pt-4">
+                        Standard IRS processing for ITIN numbers takes approximately 2 Months (6 to 8 weeks). Our CAA certified team ensures error-free filing so your application is never rejected.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden border border-cream-muted">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-sm sm:text-base font-bold text-espresso">Which payment gateways can you set up for my business?</span>
+                        <i class="fa-solid fa-chevron-down text-copper transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-espresso-soft leading-relaxed border-t border-cream-muted pt-4">
+                        We assist in setting up fully verified Stripe, Wise Business, PayPal Business, Authorize.Net, and Payoneer accounts using your US LLC legal credentials.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden border border-cream-muted">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-sm sm:text-base font-bold text-espresso">What are the annual filing requirements for a US LLC?</span>
+                        <i class="fa-solid fa-chevron-down text-copper transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-espresso-soft leading-relaxed border-t border-cream-muted pt-4">
+                        US LLCs must file an annual report with their state of formation and submit annual informational tax returns (IRS Form 5472 and Form 1120). WOLFINCROP Accounts Services handles these for you.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD CAPTURE CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-cream-pure border-t border-cream-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-black uppercase tracking-widest text-copper-dark bg-copper/10 px-3 py-1 rounded-full">Direct Consultation</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-espresso">Start Your Enterprise Today</h2>
+                    <p class="text-espresso-soft text-xs sm:text-sm leading-relaxed">
+                        Have questions about LLC states, ITIN requirements, or Stripe verification? Speak directly with our incorporation legal team.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="https://wa.me/18009653462" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-cream-soft border border-cream-muted hover:border-copper transition">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-espresso-soft font-bold uppercase">WhatsApp Instant Chat</div>
+                                <div class="text-sm font-bold text-espresso">+917505697279</div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@wolfincorp.com" class="flex items-center gap-4 p-4 rounded-2xl bg-cream-soft border border-cream-muted hover:border-copper transition">
+                            <div class="w-10 h-10 rounded-xl bg-espresso text-copper-light flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-espresso-soft font-bold uppercase">Email Support</div>
+                                <div class="text-sm font-bold text-espresso">info@wolfincorp.com</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 rounded-3xl border border-cream-muted shadow-xl">
+                        <h3 class="text-xl font-bold text-espresso mb-6">Send Us A Message</h3>
+                        
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-espresso mb-1">Your Full Name *</label>
+                                    <input type="text" required placeholder="Alex Smith" class="w-full px-4 py-3 rounded-xl bg-cream-soft border border-cream-muted text-espresso text-xs focus:outline-none focus:border-copper">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-espresso mb-1">Email Address *</label>
+                                    <input type="email" required placeholder="alex@company.com" class="w-full px-4 py-3 rounded-xl bg-cream-soft border border-cream-muted text-espresso text-xs focus:outline-none focus:border-copper">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-espresso mb-1">Phone / WhatsApp *</label>
+                                    <input type="tel" required placeholder="+91 7505697279" class="w-full px-4 py-3 rounded-xl bg-cream-soft border border-cream-muted text-espresso text-xs focus:outline-none focus:border-copper">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-espresso mb-1">Service Required</label>
+                                    <select id="main-service-select" class="w-full px-4 py-3 rounded-xl bg-cream-soft border border-cream-muted text-espresso text-xs focus:outline-none focus:border-copper">
+                                        <option value="USA LLC Formation ($150+)">USA LLC Formation (24 Hrs INC)</option>
+                                        <option value="ITIN Registration ($250)">ITIN Registration (2 Months)</option>
+                                        <option value="Stripe & Payment Gateways">Stripe / Authorize.Net Integration</option>
+                                        <option value="Wise & PayPal Accounts">Wise, PayPal & Payoneer Business</option>
+                                        <option value="Digital Marketing Services">Digital Marketing Services</option>
+                                        <option value="Accounts & Bookkeeping">Accounts & IRS Tax Filing</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-espresso mb-1">Additional Requirements</label>
+                                <textarea id="main-service-details" rows="4" placeholder="Tell us about your business model, target timeline, or preferred state..." class="w-full px-4 py-3 rounded-xl bg-cream-soft border border-cream-muted text-espresso text-xs focus:outline-none focus:border-copper"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-espresso hover:bg-espresso-light text-cream font-extrabold text-xs transition shadow-lg border border-copper/30">
+                                Submit Consultation Request <i class="fa-solid fa-paper-plane ml-2 text-copper"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-espresso text-cream pt-16 pb-12 border-t border-copper/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-espresso-soft/50">
+                
+                <div class="col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-copper text-espresso flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-wolf-pack-battalion"></i>
+                        </div>
+                        <span class="text-lg font-black tracking-wider text-white">WOLFIN<span class="text-copper-light">CROP</span></span>
+                    </a>
+                    <p class="text-xs text-cream-muted leading-relaxed max-w-sm">
+                        WOLFINCROP LLC is an international business formation and financial setup specialist firm, empowering global founders with USA LLCs, ITINs, Gateways, and Accounting.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-copper-light uppercase tracking-wider mb-4">Formation</h4>
+                    <ul class="space-y-2 text-xs text-cream-muted">
+                        <li><a href="#packages" class="hover:text-white transition">USA LLC (24 Hrs INC)</a></li>
+                        <li><a href="#packages" class="hover:text-white transition">ITIN Filing ($250)</a></li>
+                        <li><a href="#packages" class="hover:text-white transition">EIN Fast-Track</a></li>
+                        <li><a href="#packages" class="hover:text-white transition">Registered Agent</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-copper-light uppercase tracking-wider mb-4">Gateways</h4>
+                    <ul class="space-y-2 text-xs text-cream-muted">
+                        <li><a href="#gateways" class="hover:text-white transition">Stripe Setup</a></li>
+                        <li><a href="#gateways" class="hover:text-white transition">Wise Business</a></li>
+                        <li><a href="#gateways" class="hover:text-white transition">PayPal Services</a></li>
+                        <li><a href="#gateways" class="hover:text-white transition">Authorize.Net</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-copper-light uppercase tracking-wider mb-4">Growth</h4>
+                    <ul class="space-y-2 text-xs text-cream-muted">
+                        <li><a href="#services" class="hover:text-white transition">Google Ads</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Meta Campaigns</a></li>
+                        <li><a href="#services" class="hover:text-white transition">IRS Form 5472</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition">Fee Calculator</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-cream-muted space-y-2">
+                <p>© 2026 WOLFINCROP LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CONSULTATION MODAL -->
+    <div id="modal-overlay" class="fixed inset-0 z-50 bg-espresso-dark/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="glass-panel-dark max-w-lg w-full p-8 rounded-3xl border border-copper/40 text-cream relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-cream-muted hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-2xl font-black text-white mb-2">Book Consultation</h3>
+            <p class="text-xs text-cream-muted mb-6">Our corporate team will respond within 15 minutes.</p>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <input id="modal-service-name" type="hidden" value="General Inquiry">
+
+                <div>
+                    <label class="block text-xs font-bold text-cream-muted mb-1">Full Name</label>
+                    <input type="text" required placeholder="Alex Smith" class="w-full px-4 py-3 rounded-xl bg-espresso-dark border border-espresso-soft text-white text-xs focus:outline-none focus:border-copper">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-cream-muted mb-1">Email</label>
+                    <input type="email" required placeholder="alex@company.com" class="w-full px-4 py-3 rounded-xl bg-espresso-dark border border-espresso-soft text-white text-xs focus:outline-none focus:border-copper">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-cream-muted mb-1">WhatsApp / Phone Number</label>
+                    <input type="tel" required placeholder="+1 234 567 890" class="w-full px-4 py-3 rounded-xl bg-espresso-dark border border-espresso-soft text-white text-xs focus:outline-none focus:border-copper">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-copper hover:bg-copper-dark text-espresso font-black text-xs transition shadow-lg">
+                    Confirm Consultation Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST POPUP -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden glass-panel-dark text-cream p-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-copper/40">
+        <div class="w-8 h-8 rounded-full bg-copper/30 text-copper-light flex items-center justify-center">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <div id="toast-title" class="text-xs font-bold text-white">Success</div>
+            <div id="toast-msg" class="text-xs text-cream-muted">Request sent!</div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Nav Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Search Modal Handlers
+        function toggleSearchModal(show) {
+            const modal = document.getElementById('search-modal');
+            const input = document.getElementById('search-input');
+            if (show) {
+                modal.classList.remove('hidden');
+                setTimeout(() => input.focus(), 100);
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Search shortcut Ctrl+K
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleSearchModal(true);
+            }
+            if (e.key === 'Escape') {
+                toggleSearchModal(false);
+            }
+        });
+
+        function navigateToSection(id) {
+            toggleSearchModal(false);
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile Drawer Toggle
+        function toggleMobileDrawer(open) {
+            const drawer = document.getElementById('mobile-drawer');
+            const backdrop = document.getElementById('drawer-backdrop');
+            if (open) {
+                drawer.classList.add('open');
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                drawer.classList.remove('open');
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function toggleMobileAccordion(id) {
+            const acc = document.getElementById(id);
+            acc.classList.toggle('hidden');
+        }
+
+        // Hero Slider Logic
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        let isAutoplay = true;
+        let slideTimer;
+
+        function showSlide(n) {
+            slides.forEach((s, i) => {
+                if(i === n) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+
+            dots.forEach((d, i) => {
+                if(i === n) {
+                    d.classList.add('w-8', 'bg-copper');
+                    d.classList.remove('w-2.5', 'bg-cream-darker');
+                } else {
+                    d.classList.remove('w-8', 'bg-copper');
+                    d.classList.add('w-2.5', 'bg-cream-darker');
+                }
+            });
+
+            slideIndex = n;
+        }
+
+        function nextSlide() {
+            showSlide((slideIndex + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            showSlide((slideIndex - 1 + slides.length) % slides.length);
+        }
+
+        function goToSlide(n) {
+            showSlide(n);
+            restartTimer();
+        }
+
+        function startTimer() {
+            slideTimer = setInterval(nextSlide, 5000);
+        }
+
+        function stopTimer() {
+            clearInterval(slideTimer);
+        }
+
+        function restartTimer() {
+            if(isAutoplay) {
+                stopTimer();
+                startTimer();
+            }
+        }
+
+        function toggleAutoplay() {
+            const icon = document.getElementById('autoplay-icon');
+            const text = document.getElementById('autoplay-text');
+
+            if(isAutoplay) {
+                stopTimer();
+                isAutoplay = false;
+                icon.className = 'fa-solid fa-play text-copper';
+                text.textContent = 'Autoplay Off';
+            } else {
+                isAutoplay = true;
+                startTimer();
+                icon.className = 'fa-solid fa-pause text-copper';
+                text.textContent = 'Autoplay On';
+            }
+        }
+
+        startTimer();
+
+        // Active Link Scroll Spy
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const sectionTop = sec.offsetTop;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+
+        // FAQ Accordions
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                const isOpen = !content.classList.contains('hidden');
+
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-toggle i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                if(!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Grid Filter
+        function filterGrid(cat) {
+            document.querySelectorAll('.grid-tab-btn').forEach(btn => {
+                if(btn.getAttribute('data-tab') === cat) {
+                    btn.classList.add('bg-espresso', 'text-cream');
+                    btn.classList.remove('text-espresso-soft');
+                } else {
+                    btn.classList.remove('bg-espresso', 'text-cream');
+                    btn.classList.add('text-espresso-soft');
+                }
+            });
+
+            document.querySelectorAll('.grid-card').forEach(card => {
+                if(cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Pricing Calculator Logic
+        const calcChecks = document.querySelectorAll('.calc-check');
+        const calcDisplay = document.getElementById('calc-display');
+
+        function updateCalc() {
+            let total = 0;
+            calcChecks.forEach(c => {
+                if(c.checked) {
+                    total += parseInt(c.getAttribute('data-price'));
+                }
+            });
+            calcDisplay.textContent = `$${total}`;
+        }
+
+        calcChecks.forEach(c => c.addEventListener('change', updateCalc));
+
+        function bookCalculatedPackage() {
+            let selected = [];
+            calcChecks.forEach(c => {
+                if(c.checked) {
+                    selected.push(c.getAttribute('data-name'));
+                }
+            });
+
+            document.getElementById('main-service-select').value = "USA LLC Formation ($150+)";
+            document.getElementById('main-service-details').value = `Selected Estimated Package (${calcDisplay.textContent}):\n- ` + selected.join('\n- ');
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            triggerToast('Custom Package Selected', 'Proceed to complete consultation details.');
+        }
+
+        // Modal Handlers
+        function openModal(serviceName = 'General Consultation') {
+            document.getElementById('modal-service-name').value = serviceName;
+            document.getElementById('modal-overlay').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeModal();
+            triggerToast('Consultation Request Sent', 'Our advisor will contact you within 15 mins.');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            triggerToast('Message Submitted', 'Thank you! We will reach out shortly.');
+        }
+
+        function triggerToast(title, msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 4000);
+        }
+    </script>
+</body>
+</html>
